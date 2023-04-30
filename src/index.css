@@ -1,13 +1,90 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Sigmar&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sigmar", cursive;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-image: url("background-img.jpg");
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  backdrop-filter: brightness(0.8) saturate(1) contrast(1.2) blur(2px);
+}
+.card {
+  width: 750px;
+  height: 450px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  background-color: #fb3e40;
+  background-image: linear-gradient(160deg, #fb3e40 0%, #7d0003 100%);
+  width: 100%;
+  height: 100%;
+  clip-path: circle(180px at center);
+  position: absolute;
+  transition: all 0.5s;
+}
+img {
+  position: absolute;
+  pointer-events: none;
+  left: 53%;
+  object-fit: contain;
+  transform: translateX(-50%);
+  transition: all 0.5s;
+}
+.card:hover .circle {
+  clip-path: circle(700px at center);
+  transition: 1s ease;
+  border-radius: 20px;
+}
+.card:hover .image {
+  left: 58%;
+  height: 600px;
+  transform: rotate(5deg);
+  transition: all 1s;
+}
+h2 {
+  letter-spacing: 2px;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  opacity: 0;
+  font-size: 48px;
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(83, 83, 83, 0.3);
+}
+.card:hover h2 {
+  opacity: 1;
+  transition: 0.7s;
+}
+p {
+  letter-spacing: 3px;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  width: 45%;
+  left: 35px;
+  top: 130px;
+  font-size: 24px;
+  line-height: 28px;
+  opacity: 0;
+  line-height: 1.8;
+}
+.card:hover p {
+  opacity: 1;
+  transition: 0.7s;
 }
